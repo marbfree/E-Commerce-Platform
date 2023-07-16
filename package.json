@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/marbfree/E-Commerce-Platform/issues"
   },
-  "homepage": "https://github.com/marbfree/E-Commerce-Platform#readme"
+  "homepage": "https://github.com/marbfree/E-Commerce-Platform#readme",
+  "dependencies": {
+    "mysql2": "^3.5.1"
+  }
 }
