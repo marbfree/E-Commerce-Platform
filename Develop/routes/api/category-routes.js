@@ -42,21 +42,22 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
-  // const categoryData = await Category.findOne({
-  //   where: { category: 'id'} });
-  //   await category.update({category: 'id'})
-  // });
-  // update a category by its `id` value
+// router.put('/:id', async (req, res) => {
+//   const categoryData = await Category.findOne({
+//     where: { category: 'id'} });
+//     await category.update({category: 'id'})
+  
+//   // update a category by its `id` value
 //   Category.update(req.body, {
 //     where: {
 //       id: req.params.id,
 //     },
 //   })
-//   .then((category) => {
+//   .then((categoryData) => {
 //     if (req.body.category_id);
-//   })
+//   });
 // });
+
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
