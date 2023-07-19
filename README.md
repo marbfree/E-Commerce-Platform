@@ -18,6 +18,10 @@
   clone repository, then install packages with npm i, source and seed using mysql, then start the server using npm start.
 ## Usage 
   Once the server is running, you can use insomnia to run the api's and make any changes necessary.  For example, you can view all products, update products, add products, and delete products.
+
+Check out a tutorial video here:
+https://drive.google.com/file/d/1LTI9RiGWBBhjxFUeQnXBbDs1OfSFOlAk/view
+
 ## Credits 
   Thank you, Benicio for helping me understand the put requests
 ## License
