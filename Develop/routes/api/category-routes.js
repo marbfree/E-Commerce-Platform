@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
-
+// Get all categories
 router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// get a category by id
 router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
@@ -32,8 +33,8 @@ router.get('/:id', async (req, res) => {
 
 });
 
-router.post('/', async (req, res) => {
   // create a new category
+router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
@@ -42,25 +43,22 @@ router.post('/', async (req, res) => {
   }
 });
 
-// router.put('/:id', async (req, res) => {
-//   const categoryData = await Category.findOne({
-//     where: { category: 'id'} });
-//     await category.update({category: 'id'})
+// update a category
+router.put('/:id', async (req, res) => {
+  try {
+    const categoryData = await Category.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err)
+  }
+});
   
-//   // update a category by its `id` value
-//   Category.update(req.body, {
-//     where: {
-//       id: req.params.id,
-//     },
-//   })
-//   .then((categoryData) => {
-//     if (req.body.category_id);
-//   });
-// });
-
-
+// delete a category by its `id` value
 router.delete('/:id', async (req, res) => {
-  // delete a category by its `id` value
   try {
     const categoryData = await Category.destroy({
       where: {
@@ -68,7 +66,7 @@ router.delete('/:id', async (req, res) => {
       }
     });
     if (!categoryData) {
-      res.status(404).json({ message: 'No category found with this id!'});
+      res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
     res.status(200).json(categoryData);
